@@ -19,6 +19,11 @@ componentDidMount() {
     })
   })
   .catch(err => console.log(err))
+axios
+  .get(`https://api.github.com/users/lorenzosimpson/followers`)
+  .then(res => {
+    console.log(res)
+  })
 }
 
   render() {
