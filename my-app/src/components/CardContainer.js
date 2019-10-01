@@ -4,10 +4,21 @@ import Card from './Card';
 
 const CardContainer = props => {
     console.log(props.myData)
+    const followers = props.followersData;
+    console.log(followers, 'followers')
     return (
         <div className='card-container'>
             <Me myData={props.myData} />
-            <Card />
+            {props.followersData.map(follower => {
+                return (
+                    <Card 
+                    login={follower.login}
+                    url={follower.url}
+                    avatarUrl={follower.avatar_url}
+                    />
+                )
+            })}
+            
         </div>
         );
 }

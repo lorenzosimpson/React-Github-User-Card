@@ -5,7 +5,8 @@ import CardContainer from './components/CardContainer';
 
 class App extends React.Component {
   state = {
-    myData: []
+    myData: [],
+    followersData: []
   }
   
 componentDidMount() {
@@ -23,13 +24,16 @@ axios
   .get(`https://api.github.com/users/lorenzosimpson/followers`)
   .then(res => {
     console.log(res)
+    this.setState({
+      followersData: res.data
+    })
   })
 }
 
   render() {
     return (
     <div className="App">
-      <CardContainer myData={this.state.myData}/>
+      <CardContainer myData={this.state.myData} followersData={this.state.followersData}/>
     </div>
   );
 }
