@@ -9,16 +9,19 @@ const CardContainer = props => {
     return (
         <div className='card-container'>
             <Me myData={props.myData} />
-            {props.followersData.map(follower => {
-                return (
-                    <Card 
-                    login={follower.login}
-                    url={follower.url}
-                    avatarUrl={follower.avatar_url}
-                    />
-                )
-            })}
-            
+
+            <div className='followers-container'>
+                {props.followersData.map(follower => {
+                    return (
+                        <Card 
+                        login={follower.login}
+                        html_url={follower.html_url}
+                        avatarUrl={follower.avatar_url}
+                        following={follower.following}
+                        />
+                    )
+                })}
+            </div>
         </div>
         );
 }

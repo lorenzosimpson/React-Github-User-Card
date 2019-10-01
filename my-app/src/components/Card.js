@@ -1,11 +1,12 @@
 import React from 'react';
 
 const Card = props => {
-    console.log(props.followers, 'props followers')
     return (
         <div className='card'>
-            <img src={props.avatarUrl}></img>
-            <a href={`${props.url}`}><h1>{props.login}</h1></a>
+            <a href={`${props.html_url}`} target='_blank'>
+                <img src={props.avatarUrl}></img>
+                <h2>{props.login.toLowerCase()}</h2>
+            </a>
         </div>
     )
 }
