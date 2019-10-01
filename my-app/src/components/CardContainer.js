@@ -1,8 +1,10 @@
 import React from 'react';
+import Me from './Me';
 
 const CardContainer = props => {
+    console.log(props.myData)
     return (
-        null
+        <Me myData={props.myData} />
         );
 }
 
