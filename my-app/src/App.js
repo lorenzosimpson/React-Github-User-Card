@@ -14,7 +14,6 @@ componentDidMount() {
   //get followers array from Github API
   .get(`https://api.github.com/users/lorenzosimpson`)
   .then(res => {
-    console.log(res)
     this.setState({
       myData: res.data
     })
@@ -23,7 +22,6 @@ componentDidMount() {
 axios
   .get(`https://api.github.com/users/lorenzosimpson/followers`)
   .then(res => {
-    console.log(res)
     this.setState({
       followersData: res.data
     })

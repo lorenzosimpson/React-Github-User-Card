@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Me = props => {
-    console.log(props.myData)
     return (
         <div className='me-card'>
             <img src={props.myData.avatar_url} alt='lorenzo'></img>
